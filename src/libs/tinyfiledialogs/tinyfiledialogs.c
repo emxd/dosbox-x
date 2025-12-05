@@ -1701,7 +1701,7 @@ wchar_t * tinyfd_saveFileDialogW(
 				if (quoteDetectedW(aFilterPatterns[i])) return tinyfd_saveFileDialogW(L"INVALID FILTER_PATTERN WITH QUOTES: use the GRAVE ACCENT \\x60 instead.", aDefaultPathAndOrFile, 0, NULL, NULL);
 		}*/
 
-		lHResult = CoInitializeEx(NULL, 0);
+		lHResult = CoInitialize(NULL);
 
 		getPathWithoutFinalSlashW(lDirname, aDefaultPathAndOrFile);
 		getLastNameW(lBuff, aDefaultPathAndOrFile);
@@ -1827,7 +1827,7 @@ wchar_t * tinyfd_openFileDialogW(
 		}
 		if (!lBuff) return NULL;
 
-		lHResult = CoInitializeEx(NULL, 0);
+		lHResult = CoInitialize(NULL);
 
 		getPathWithoutFinalSlashW(lDirname, aDefaultPathAndOrFile);
 		getLastNameW(lBuff, aDefaultPathAndOrFile);
@@ -1988,7 +1988,7 @@ wchar_t * tinyfd_selectFolderDialogW(
 		/*if (quoteDetectedW(aTitle)) return tinyfd_selectFolderDialogW(L"INVALID TITLE WITH QUOTES", aDefaultPath);
 		if (quoteDetectedW(aDefaultPath)) return tinyfd_selectFolderDialogW(aTitle, L"INVALID DEFAULT_PATH WITH QUOTES");*/
 
-		lHResult = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED);
+		lHResult = CoInitialize(NULL);
 
 		bInfo.hwndOwner = GetForegroundWindow();
 		bInfo.pidlRoot = NULL;
@@ -2040,7 +2040,7 @@ wchar_t * tinyfd_colorChooserW(
 		/*if (quoteDetectedW(aTitle)) return tinyfd_colorChooserW(L"INVALID TITLE WITH QUOTES", aDefaultHexRGB, aDefaultRGB, aoResultRGB);
 		if (quoteDetectedW(aDefaultHexRGB)) return tinyfd_colorChooserW(aTitle, L"INVALID DEFAULT_HEX_RGB WITH QUOTES: use the GRAVE ACCENT \\x60 instead.", aDefaultRGB, aoResultRGB);*/
 
-		lHResult = CoInitializeEx(NULL, 0);
+		lHResult = CoInitialize(NULL);
 
 		if ( aDefaultHexRGB && wcslen(aDefaultHexRGB) )
 		{
