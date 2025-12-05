@@ -7989,7 +7989,7 @@ int main(int argc, char* argv[]) SDL_MAIN_NOEXCEPT {
     control=&myconf;
 
 #if defined(WIN32) && !defined(HX_DOS)
-    CoInitializeEx(NULL, COINIT_APARTMENTTHREADED);
+    CoInitialize(NULL);
 #endif
 
 
