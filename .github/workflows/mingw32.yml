@@ -302,7 +302,6 @@ jobs:
         run: |
           top=`pwd`
           ./build-mingw-lowend9x
-          strip -s $top/src/dosbox-x.exe
       - name: Package MinGW32 lowend9x
         run: |
           top=`pwd`

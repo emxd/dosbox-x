@@ -114,7 +114,7 @@
 #if defined(__MINGW32__)
 #include <_mingw.h>
 #endif
-#define ENABLE_IM_EVENT 1
+//#define ENABLE_IM_EVENT 1
 #endif
 #endif
 
